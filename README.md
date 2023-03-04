@@ -1,3 +1,5 @@
+# 注意
+有些账号有一定概率不可用，比如被风控，请勿将Issue提交到MiraiBot! 可以看我提交的[Issue](https://github.com/mamoe/mirai/issues/2545)
 # MiraiBot
 一个供用户使用的基于Mirai-Api-Http的Mirai插件。
 # 安装
