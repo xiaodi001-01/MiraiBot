@@ -17,7 +17,7 @@ def init():
     getNickname = requests.get('http://127.0.0.1:8080/sessionInfo?sessionKey='+sessionJson['session'])
     YourID = getNickname.json()
     print("")
-    print("您好，",YourID["data"]["qq"]["nickname"],"欢迎使用小迪的Mirai机器人，您的会话是(同时充当盐ID)：",sessionJson['session'])
+    print("您好，",YourID["data"]["qq"]["nickname"],"欢迎使用MiraiBot，您的会话是：",sessionJson['session'])
     onlinemsg='{"sessionKey": "'+sessionJson['session']+'", "target": 3292744510, "messageChain": [{"type": "Plain", "text": "'+messages[0]+'"}]}'
     print(onlinemsg)
     onlinemsg=onlinemsg.encode('utf-8')
@@ -34,19 +34,4 @@ def init():
             botLog.write(msg)
             response = response['data']
             print(response[0])
-            if '📺 ➕' in response:
-                check = response
-                print(check['data']['messageChain'][0]['sender'])
-            elif response[0]['type'] == 'FriendMessage':
-                print("MiraiBot-191173--------->Debug Breakpoint ran message")
-                for i in response[0]['messageChain']:
-                    if i == {'type': 'Plain', 'text': 'EveryBodyVotesChannel'}:
-                        print("MiraiBot-191173--------->Debug Breakpoint ran message,info:",response[0]['sender']['id'])
-                        print(response[0]['sender']['id'])
-                        everybodyvotes = '{"sessionKey": "' + sessionJson['session'] + '", "target": '+response[0]['sender']['id']+', "messageChain": [{"type": "Plain", "text": "' + messages[2] + '"}]}'
-                        requests.post('http://127.0.0.1:8080/sendFriendMessage', data=everybodyvotes)# 投票
-
-
-
-
 init()
