@@ -2,7 +2,7 @@ import random
 
 import requests  # 调用API 127.0.0.1:8080
 import random
-messages = ["机器人已上线，正在等待你的命令...", "当前屏蔽词为：\n1.📺 ➕", "欢迎来到 EverybodyVotes 频道，None\n在这里你可以为一件事投票\n当前可投票事件列表:投票ID:[0]: 是否开通挂机宝，可以选择赞成或反对"]
+messages = ["机器人已上线，正在等待你的命令..."]
 #ID0：上线消息
 import pymongo
 import time
